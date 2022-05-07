@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import FileSaver from 'file-saver';
 
+const API_KEY = process.env.API_KEY
 
 export default function App() {
   const editorRef = useRef(null);
@@ -30,7 +31,7 @@ export default function App() {
     </div>
     <div>
       <Editor onChange={null}
-        apiKey='obtain your own code from TinyMCE'
+        apiKey={API_KEY}
         onInit={(evt, editor) => editorRef.current = editor}
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{
